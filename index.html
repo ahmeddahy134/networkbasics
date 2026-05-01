@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,30 +284,26 @@
 <div class="orb orb2"></div>
 <div class="grid-bg"></div>
 
-<!-- TOP BAR -->
 <div class="topbar">
-  <div class="topbar-logo">SecFlow · 2026</div>
+  <div class="topbar-logo">NetSec · 2024</div>
   <div style="display:flex;gap:16px;align-items:center;">
     <span style="font-size:11px;color:var(--c-dim);">
-      <span class="kbd">←</span> <span class="kbd">→</span> للتنقل
+      <span class="kbd">←</span> <span class="kbd">→</span> to navigate
     </span>
     <div class="slide-counter">Slide <span id="cur">1</span> / <span id="tot">1</span></div>
   </div>
 </div>
 
-<!-- PROGRESS -->
 <div class="progress-bar-wrap">
   <div class="progress-bar" id="progress" style="width:0%"></div>
 </div>
 
-<!-- SLIDES DECK -->
 <div id="deck"></div>
 
-<!-- BOTTOM NAV -->
 <div class="bottomnav">
-  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← السابق</button>
+  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Prev</button>
   <div class="dot-nav" id="dotNav"></div>
-  <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">التالي →</button>
+  <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Next →</button>
 </div>
 
 <script>
@@ -323,9 +319,9 @@ const slides = [
           <h1 class="hero-title fade-up delay-2">
             Computer Networks<br>&amp; <span class="accent">Cybersecurity</span>
           </h1>
-          <p class="hero-sub fade-up delay-3">من الأساسيات لحد الـ Security Mindset</p>
+          <p class="hero-sub fade-up delay-3">From fundamentals to the Security Mindset</p>
           <div class="hero-badges fade-up delay-4">
-            <div class="hero-badge-item">🕐 1.5 – 2 ساعات</div>
+            <div class="hero-badge-item">🕐 1.5 – 2 Hours</div>
             <div class="hero-badge-item">📊 38 Slides</div>
             <div class="hero-badge-item">🔒 Security Integrated</div>
             <div class="hero-badge-item">🎯 Beginner → Intermediate</div>
@@ -344,18 +340,18 @@ const slides = [
     type: 'standard',
     badge: { text: 'Agenda', color: 'badge-blue' },
     title: 'What We\'ll Cover <span class="hl">Today</span>',
-    subtitle: 'رحلة من الأساسيات لحد Security Mindset',
+    subtitle: 'A journey from fundamentals to Security Mindset',
     content: `
       <div class="agenda-grid">
         ${[
-          ['01','Network Foundations','تعريف، عناصر، وتصنيفات الشبكات'],
-          ['02','Network Topologies','أشكال توصيل الأجهزة — Bus, Star, Mesh'],
-          ['03','OSI & TCP/IP','الـ 7 Layers — كل layer بتعمل إيه'],
+          ['01','Network Foundations','Network definition, elements, and classifications'],
+          ['02','Network Topologies','Device connection layouts — Bus, Star, Mesh'],
+          ['03','OSI & TCP/IP','The 7 Layers — What each layer does'],
           ['04','IP Addressing','Private vs Public, NAT, DHCP, ARP'],
           ['05','Transport Layer','TCP vs UDP, Ports, Handshake'],
           ['06','App Protocols','HTTP, DNS, FTP, SMTP, SSH, RDP'],
-          ['07','Network Devices','Hub, Switch, Router — الفرق والدور'],
-          ['08','Security View','الهجمات المبنية على كل مفهوم'],
+          ['07','Network Devices','Hub, Switch, Router — Differences and roles'],
+          ['08','Security View','Attacks based on each concept'],
         ].map(([n,h,p])=>`
           <div class="agenda-card fade-up">
             <div class="agenda-num">${n}</div>
@@ -364,7 +360,7 @@ const slides = [
         `).join('')}
       </div>
     `,
-    note: 'اشرح الـ agenda بسرعة — خلّي الناس تعرف إنهم هيمشوا من الأساسيات للـ Security mindset.'
+    note: 'Explain the agenda quickly — let the audience know they will go from basics to a security mindset.'
   },
 
   // ── SLIDE 3: SECTION DIVIDER ──
@@ -372,7 +368,7 @@ const slides = [
     type: 'divider',
     num: '01',
     title: 'Network Foundations',
-    subtitle: 'ما هي الشبكة؟ ولماذا نبنيها؟',
+    subtitle: 'What is a network? And why do we build it?',
     color: 'var(--c-accent)'
   },
 
@@ -381,23 +377,23 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 01 · Foundations', color: 'badge-blue' },
     title: 'What Is a <span class="hl">Computer Network?</span>',
-    subtitle: 'أبسط تعريف ممكن',
+    subtitle: 'The simplest definition possible',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🌐','blue','مجموعة أجهزة متوصلة ببعض عشان <span class="en">تتشارك Resources</span>',''],
-          ['📁','green','الـ Resources دي: <span class="en">Files, Devices, Internet, Software, Printers</span>',''],
-          ['🎯','blue','الهدف: توصيل المعلومة من <span class="en">A</span> لـ <span class="en">B</span> بأمان وكفاءة',''],
-          ['🏝️','orange','من غير Network — كل جهاز جزيرة منعزلة ❌',''],
-          ['📞','green','مثال حقيقي: WhatsApp, Email, File Server, Internet Access',''],
+          ['🌐','blue','A group of connected devices to share <span class="en">Resources</span>',''],
+          ['📁','green','These Resources include: <span class="en">Files, Devices, Internet, Software, Printers</span>',''],
+          ['🎯','blue','Goal: Deliver information from <span class="en">A</span> to <span class="en">B</span> safely and efficiently',''],
+          ['🏝️','orange','Without a Network — every device is an isolated island ❌',''],
+          ['📞','green','Real example: WhatsApp, Email, File Server, Internet Access',''],
         ])}
       </div>
       <div class="callout callout-blue" style="margin-top:18px;">
         <span>🚗</span>
-        <span><strong>Analogy:</strong> الشبكة زي شبكة الطرق اللي بتوصل المدن ببعض — من غيرها كل مدينة معزولة</span>
+        <span><strong>Analogy:</strong> A network is like a road system connecting cities — without it, every city is isolated.</span>
       </div>
     `,
-    note: 'ابدأ بالسؤال: ليه أنت محتاج Network أصلاً؟ خلّي الناس يفكروا.'
+    note: 'Start with a question: Why do you need a network in the first place? Make people think.'
   },
 
   // ── SLIDE 5: NETWORK ELEMENTS ──
@@ -405,28 +401,28 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 01 · Foundations', color: 'badge-blue' },
     title: 'Network <span class="hl">Building Blocks</span>',
-    subtitle: 'إيه اللي محتاجه عشان تبني شبكة؟',
+    subtitle: 'What do you need to build a network?',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent);">🔧 Hardware</div>
           ${mkBullets([
             ['💻','blue','<span class="en">Devices:</span> Computers, Phones, Printers, Cameras',''],
-            ['📡','blue','<span class="en">Medium:</span> كابلات (Wired) أو WiFi (Wireless) أو Satellites',''],
-            ['🔌','blue','<span class="en">NIC</span> — الكارت اللي بيوصل جهازك بالشبكة',''],
+            ['📡','blue','<span class="en">Medium:</span> Cables (Wired) or WiFi (Wireless) or Satellites',''],
+            ['🔌','blue','<span class="en">NIC</span> — The card that connects your device to the network',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">💾 Software</div>
           ${mkBullets([
-            ['📨','green','<span class="en">Messages:</span> الـ Data اللي بتتنقل — Mails, Files, Web Pages',''],
-            ['📋','green','<span class="en">Protocols:</span> قواعد الاتصال — HTTP, FTP, HTTPS, RDP',''],
-            ['🤝','green','من غير Protocols — الأجهزة مش هتفهم بعض',''],
+            ['📨','green','<span class="en">Messages:</span> The transferred Data — Mails, Files, Web Pages',''],
+            ['📋','green','<span class="en">Protocols:</span> Communication rules — HTTP, FTP, HTTPS, RDP',''],
+            ['🤝','green','Without Protocols — devices won\'t understand each other',''],
           ])}
         </div>
       </div>
     `,
-    note: 'وضّح إن الـ Protocol زي اللغة المشتركة — لو مش بتتكلموا بنفس اللغة مش هتفاهموا.'
+    note: 'Clarify that a Protocol is like a common language — if they don\'t speak the same language, they won\'t communicate.'
   },
 
   // ── SLIDE 6: KEY TERMS ──
@@ -434,23 +430,23 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 01 · Foundations', color: 'badge-blue' },
     title: '<span class="hl">Must-Know</span> Terms',
-    subtitle: 'المصطلحات الأساسية — لازم تحفظهم',
+    subtitle: 'Basic terms — you must memorize them',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🪪','blue','<span class="en">MAC Address</span> — العنوان الفيزيائي | محروق على الـ NIC | Unique في العالم كله | <span class="en">48-bit</span>',''],
-          ['📍','green','<span class="en">IP Address</span> — العنوان المنطقي | بيتغير | بيعرّف جهازك على الـ Network',''],
-          ['📋','purple','<span class="en">Protocol</span> — قواعد الاتصال اللي كل الأجهزة لازم توافق عليها',''],
-          ['🕸️','orange','<span class="en">Topology</span> — شكل توصيل الأجهزة ببعض (Physical + Logical)',''],
-          ['🔁','blue','<span class="en">Router</span> — بيوصل شبكات مختلفة | <span class="en">Switch</span> — بيوصل أجهزة في نفس الشبكة',''],
+          ['🪪','blue','<span class="en">MAC Address</span> — Physical address | Burned onto the NIC | Unique worldwide | <span class="en">48-bit</span>',''],
+          ['📍','green','<span class="en">IP Address</span> — Logical address | Changes | Identifies your device on the Network',''],
+          ['📋','purple','<span class="en">Protocol</span> — Communication rules that all devices must agree upon',''],
+          ['🕸️','orange','<span class="en">Topology</span> — How devices are connected to each other (Physical + Logical)',''],
+          ['🔁','blue','<span class="en">Router</span> — Connects different networks | <span class="en">Switch</span> — Connects devices within the same network',''],
         ])}
       </div>
       <div class="callout callout-yellow" style="margin-top:14px;">
         <span>💡</span>
-        <span><strong>تذكّر:</strong> MAC = رقم بطاقتك (ثابت) &nbsp;|&nbsp; IP = عنوان بيتك (بيتغير)</span>
+        <span><strong>Remember:</strong> MAC = your ID number (fixed) &nbsp;|&nbsp; IP = your home address (changes)</span>
       </div>
     `,
-    note: 'الفرق بين MAC وIP أهم نقطة هنا — MAC فيزيائي ثابت، IP منطقي ومتغير.'
+    note: 'The difference between MAC and IP is the most important point here — MAC is physical and fixed, IP is logical and changeable.'
   },
 
   // ── SLIDE 7: NETWORK CLASSIFICATIONS ──
@@ -458,19 +454,19 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 01 · Foundations', color: 'badge-blue' },
     title: 'Network Classifications — <span class="hl">PAN / LAN / MAN / WAN</span>',
-    subtitle: 'الشبكة بتتصنف بالحجم والمسافة',
+    subtitle: 'Networks are classified by size and distance',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['📱','purple','<span class="en">PAN (Personal Area Network)</span> — حواليك جسمك | Bluetooth | بضع أمتار',''],
-          ['🏢','blue','<span class="en">LAN (Local Area Network)</span> — بيتك أو أوفيسك | 100m–1km | سرعة عالية | تحت سيطرتك',''],
-          ['🏙️','green','<span class="en">MAN (Metropolitan Area Network)</span> — مدينة كاملة | Up to 100km | شبكات الحكومات',''],
-          ['🌍','orange','<span class="en">WAN (Wide Area Network)</span> — دول كاملة | سرعة أقل | تحت سيطرة ISP',''],
-          ['🌐','blue','<span class="en">Internet</span> — أكبر WAN في العالم | ملهوش مالك واحد | ISOC, IETF, ICANN بتنظمه',''],
+          ['📱','purple','<span class="en">PAN (Personal Area Network)</span> — Around your body | Bluetooth | A few meters',''],
+          ['🏢','blue','<span class="en">LAN (Local Area Network)</span> — Your home or office | 100m–1km | High speed | Under your control',''],
+          ['🏙️','green','<span class="en">MAN (Metropolitan Area Network)</span> — A whole city | Up to 100km | Government networks',''],
+          ['🌍','orange','<span class="en">WAN (Wide Area Network)</span> — Entire countries | Lower speed | Under ISP control',''],
+          ['🌐','blue','<span class="en">Internet</span> — The largest WAN in the world | No single owner | Regulated by ISOC, IETF, ICANN',''],
         ])}
       </div>
     `,
-    note: 'اسأل: الشبكة في الأوفيس بتاعكم — إيه نوعها؟ لما بتبعت ملف via Bluetooth — إيه ده؟'
+    note: 'Ask: What type of network is in your office? When you send a file via Bluetooth — what is that?'
   },
 
   // ── SLIDE 8: SECTION DIVIDER TOPOLOGY ──
@@ -478,7 +474,7 @@ const slides = [
     type: 'divider',
     num: '02',
     title: 'Network Topologies',
-    subtitle: 'الشبكة بتتشكل إزاي؟',
+    subtitle: 'How is a network structured?',
     color: 'var(--c-accent2)'
   },
 
@@ -487,15 +483,15 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 02 · Topologies', color: 'badge-orange' },
     title: 'Network <span class="hl">Topologies</span>',
-    subtitle: 'شكل الشبكة — Physical vs Logical',
+    subtitle: 'Network Layout — Physical vs Logical',
     content: `
       <div class="topo-grid">
         ${[
-          ['🚌','Bus','كابل واحد — الكل متوصل فيه','❌ لو انكسر — الكل وقف'],
-          ['⭐','Star','Hub/Switch في النص','✅ الأشيع — سهل إدارته'],
-          ['💍','Ring','حلقة مغلقة — Token يمر','⚠️ بطيء مع الأعداد الكبيرة'],
-          ['🕸️','Mesh','كل جهاز متوصل بكل الأجهزة','✅ Fault Tolerant — غالي'],
-          ['🔀','Hybrid','مزيج من أكتر من Topology','✅ الأكثر استخداماً في الواقع'],
+          ['🚌','Bus','Single cable — everyone connected to it','❌ If it breaks — everything stops'],
+          ['⭐','Star','Hub/Switch in the center','✅ Most common — easy to manage'],
+          ['💍','Ring','Closed loop — Token passes','⚠️ Slow with large numbers'],
+          ['🕸️','Mesh','Every device connected to every device','✅ Fault Tolerant — Expensive'],
+          ['🔀','Hybrid','Mix of multiple Topologies','✅ Most used in reality'],
         ].map(([icon,name,desc,note])=>`
           <div class="topo-card fade-up">
             <div class="topo-icon">${icon}</div>
@@ -507,10 +503,10 @@ const slides = [
       </div>
       <div class="callout callout-red" style="margin-top:14px;">
         <span>🔒</span>
-        <span><strong>Security Note:</strong> Bus + Hub = كل الأجهزة بتشوف كل الـ Traffic ← خطر Sniffing</span>
+        <span><strong>Security Note:</strong> Bus + Hub = All devices see all Traffic ← Sniffing risk</span>
       </div>
     `,
-    note: 'Bus Topology قديمة بس مهمة تفهمها عشان تفهم ليه الـ Hub خطر أمنياً.'
+    note: 'Bus Topology is old but important to understand why Hubs are a security risk.'
   },
 
   // ── SLIDE 10: STAR vs MESH DEEP ──
@@ -518,36 +514,36 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 02 · Topologies', color: 'badge-orange' },
     title: '<span class="hl">Star</span> vs <span class="hl">Mesh</span> — Deep Dive',
-    subtitle: 'الأكثر استخداماً في الواقع',
+    subtitle: 'Most commonly used in reality',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent);">⭐ Star Topology</div>
           ${mkBullets([
-            ['✅','green','لو جهاز وحد وقع — الباقيين شغالين',''],
-            ['✅','green','سهل الـ Troubleshooting — إيزولت الفرع المتعطل',''],
-            ['✅','green','سهل الـ Expansion — ضيف جهاز جديد بسهولة',''],
-            ['⚠️','orange','لو الـ Central Device (Switch) وقع — الكل وقف',''],
+            ['✅','green','If one device fails — the rest keep working',''],
+            ['✅','green','Easy Troubleshooting — isolate the broken branch',''],
+            ['✅','green','Easy Expansion — add a new device easily',''],
+            ['⚠️','orange','If the Central Device (Switch) fails — everything stops',''],
           ])}
           <div class="callout callout-blue" style="margin-top:10px;font-size:12px;">
-            <span>💡</span><span>Switched Star أأمن من Hubbed Star — Switch بيبعت للمستقبل بس</span>
+            <span>💡</span><span>Switched Star is safer than Hubbed Star — Switch sends only to the receiver</span>
           </div>
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">🕸️ Mesh Topology</div>
           ${mkBullets([
-            ['✅','green','Highest Fault Tolerance — لو طريق وقع في طريق تاني',''],
-            ['✅','green','Redundancy — دايماً في بديل',''],
-            ['✅','green','Secure — صعب تقطع كل الـ Connections',''],
-            ['❌','red','غالية جداً — كتير كابلات | Formula: <span class="en">CN = D×(D-1)÷2</span>',''],
+            ['✅','green','Highest Fault Tolerance — if one path fails, there is another',''],
+            ['✅','green','Redundancy — there is always an alternative',''],
+            ['✅','green','Secure — hard to cut all Connections',''],
+            ['❌','red','Very expensive — too many cables | Formula: <span class="en">CN = D×(D-1)÷2</span>',''],
           ])}
           <div class="callout callout-green" style="margin-top:10px;font-size:12px;">
-            <span>🌐</span><span>الـ Internet Core بيستخدم Mesh — عشان مينقطعش</span>
+            <span>🌐</span><span>The Internet Core uses Mesh — so it never goes down</span>
           </div>
         </div>
       </div>
     `,
-    note: 'الـ Mesh بتلاقيها في البنية التحتية للـ Internet نفسه — مش في الـ LAN العادية.'
+    note: 'You find Mesh in the Internet Core infrastructure itself — not in standard LANs.'
   },
 
   // ── SLIDE 11: P2P vs CLIENT/SERVER ──
@@ -555,34 +551,34 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 02 · Network Models', color: 'badge-orange' },
     title: 'Network Models — <span class="hl">P2P</span> vs <span class="hl">Client/Server</span>',
-    subtitle: 'مين الـ Boss في الشبكة؟',
+    subtitle: 'Who is the Boss in the network?',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent3);">🤝 Peer-to-Peer (P2P)</div>
           ${mkBullets([
-            ['👥','purple','كل الأجهزة متساوية — مافيش Boss',''],
-            ['📁','purple','كل جهاز بيشارك Resources وبياخد منها',''],
-            ['🏠','purple','مثال: Windows Workgroup, BitTorrent',''],
-            ['⚠️','orange','صعب التحكم والأمان في الشبكات الكبيرة',''],
+            ['👥','purple','All devices are equal — no Boss',''],
+            ['📁','purple','Every device shares and consumes Resources',''],
+            ['🏠','purple','Example: Windows Workgroup, BitTorrent',''],
+            ['⚠️','orange','Hard to control and secure in large networks',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">🖥️ Client / Server</div>
           ${mkBullets([
-            ['👑','green','Server قوي بيقدم الخدمة — Clients بياخدوها',''],
-            ['🌐','green','أمثلة: Web Server, Mail Server, File Server',''],
-            ['🏢','green','المستخدم في الشركات والمؤسسات الكبيرة',''],
-            ['🔒','green','أسهل في الإدارة والأمان والتحكم',''],
+            ['👑','green','Powerful Server provides the service — Clients consume it',''],
+            ['🌐','green','Examples: Web Server, Mail Server, File Server',''],
+            ['🏢','green','Used in companies and large organizations',''],
+            ['🔒','green','Easier to manage, secure, and control',''],
           ])}
         </div>
       </div>
       <div class="callout callout-blue" style="margin-top:14px;">
         <span>🎓</span>
-        <span>الـ Web نفسه Client/Server — المتصفح هو الـ Client، وGoogle أو Facebook هو الـ Server</span>
+        <span>The Web itself is Client/Server — the browser is the Client, and Google or Facebook is the Server</span>
       </div>
     `,
-    note: 'اسأل: لما بتفتح Facebook — أنت إيه؟ وFacebook إيه؟'
+    note: 'Ask: When you open Facebook — what are you? And what is Facebook?'
   },
 
   // ── SLIDE 12: SECTION DIVIDER OSI ──
@@ -590,7 +586,7 @@ const slides = [
     type: 'divider',
     num: '03',
     title: 'OSI Model & TCP/IP',
-    subtitle: 'إزاي البيانات بتتنقل؟ — The Language of Networks',
+    subtitle: 'How is data transmitted? — The Language of Networks',
     color: 'var(--c-accent3)'
   },
 
@@ -599,23 +595,23 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 03 · OSI / TCP/IP', color: 'badge-purple' },
     title: 'Why a <span class="hl">Layered Model?</span>',
-    subtitle: 'ليه محتاجين OSI أصلاً؟',
+    subtitle: 'Why do we need OSI in the first place?',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🧩','blue','<span class="en">Reduces Complexity</span> — كل Layer بتعمل حاجة واحدة بس',''],
-          ['🔍','green','<span class="en">Easier Troubleshooting</span> — المشكلة في أنهي Layer؟ ← وفّرنا ساعات',''],
-          ['🤝','purple','<span class="en">Standardization</span> — أجهزة من شركات مختلفة تتكلم مع بعض',''],
-          ['🔀','orange','<span class="en">Layer Separation</span> — التغيير في Layer مش بيأثر على التانية',''],
-          ['📚','blue','<span class="en">Simplifies Learning</span> — هنفهم كل طبقة لوحدها',''],
+          ['🧩','blue','<span class="en">Reduces Complexity</span> — Each Layer does only one thing',''],
+          ['🔍','green','<span class="en">Easier Troubleshooting</span> — Where is the problem? ← Saves hours',''],
+          ['🤝','purple','<span class="en">Standardization</span> — Devices from different vendors talk to each other',''],
+          ['🔀','orange','<span class="en">Layer Separation</span> — Changing one Layer doesn\'t affect the others',''],
+          ['📚','blue','<span class="en">Simplifies Learning</span> — We will understand each layer individually',''],
         ])}
       </div>
       <div class="callout callout-blue" style="margin-top:14px;">
         <span>🥪</span>
-        <span><strong>Analogy:</strong> زي طبقات السندوتش — كل طبقة ليها دورها من غير ما تتداخل مع اللي فوقيها أو تحتيها</span>
+        <span><strong>Analogy:</strong> Like sandwich layers — each layer has its role without interfering with the one above or below it.</span>
       </div>
     `,
-    note: 'مثال: مشكلة في الـ Physical Layer (كابل مكسور) مش علاقتها بالـ Application Layer.'
+    note: 'Example: A problem in the Physical Layer (broken cable) has nothing to do with the Application Layer.'
   },
 
   // ── SLIDE 14: OSI 7 LAYERS ──
@@ -627,9 +623,9 @@ const slides = [
     content: `
       <div class="diagram-box" style="padding:16px;">
         ${[
-          [7,'Application','#00c8ff','Interface مع الـ User — HTTP, FTP, DNS, SMTP','Data'],
+          [7,'Application','#00c8ff','Interface with the User — HTTP, FTP, DNS, SMTP','Data'],
           [6,'Presentation','#a78bfa','Encoding, Encryption, Compression','Data'],
-          [5,'Session','#7c3aed','إنشاء وإدارة وإنهاء الـ Sessions','Data'],
+          [5,'Session','#7c3aed','Establishing, managing, and terminating Sessions','Data'],
           [4,'Transport','#f59e0b','Segmentation — TCP / UDP — Port Numbers','Segment'],
           [3,'Network','#10d9a0','Routing — IP Addressing — Best Path','Packet'],
           [2,'Data Link','#ff6b35','MAC Address — Error Detection — Frames','Frame'],
@@ -644,39 +640,39 @@ const slides = [
         `).join('')}
       </div>
     `,
-    note: 'الـ Mnemonic: A-P-S-T-N-D-P من فوق لتحت. ركّز على اللي بيحصل في كل Layer مش بس الاسم.'
+    note: 'The Mnemonic: A-P-S-T-N-D-P from top to bottom. Focus on what happens in each Layer, not just the name.'
   },
 
   // ── SLIDE 15: ENCAPSULATION ──
   {
     type: 'standard',
     badge: { text: 'Section 03 · OSI Model', color: 'badge-purple' },
-    title: 'Data <span class="hl">Encapsulation</span> — ما الذي يحدث؟',
-    subtitle: 'كيف تسافر البيانات من جهاز لآخر',
+    title: 'Data <span class="hl">Encapsulation</span> — What happens?',
+    subtitle: 'How data travels from one device to another',
     content: `
       <div class="diagram-box">
-        <div style="text-align:center;font-size:12px;color:var(--c-dim);margin-bottom:16px;">سيناريو: أنت بتفتح <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">www.google.com</span></div>
+        <div style="text-align:center;font-size:12px;color:var(--c-dim);margin-bottom:16px;">Scenario: You are opening <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">www.google.com</span></div>
         <div class="flow-row" style="flex-direction:column;gap:8px;align-items:stretch;">
           ${[
-            ['7 App','HTTP Request يتبعت','node-blue'],
+            ['7 App','HTTP Request is sent','node-blue'],
             ['4 Transport','TCP Segment + Port 80','node-purple'],
             ['3 Network','IP Packet + Source/Dest IP','node-green'],
             ['2 Data Link','Frame + MAC Addresses','node-orange'],
-            ['1 Physical','Bits عبر الكابل أو الهواء','node-red'],
+            ['1 Physical','Bits over the cable or air','node-red'],
           ].map(([layer,desc,cls],i)=>`
             <div style="display:flex;align-items:center;gap:12px;">
               <div class="flow-node ${cls}" style="width:120px;text-align:center;">${layer}</div>
               <div style="color:var(--c-dim);font-size:13px;">→ ${desc}</div>
-              ${i<4?`<div style="margin-left:auto;font-size:11px;color:var(--c-dim);">+ Header يُضاف ▼</div>`:`<div style="margin-left:auto;font-size:11px;color:var(--c-green);">📡 يُرسل!</div>`}
+              ${i<4?`<div style="margin-left:auto;font-size:11px;color:var(--c-dim);">+ Header Added ▼</div>`:`<div style="margin-left:auto;font-size:11px;color:var(--c-green);">📡 Sent!</div>`}
             </div>
           `).join('')}
         </div>
         <div class="callout callout-blue" style="margin-top:14px;font-size:13px;">
-          <span>🔄</span><span>الجانب التاني بيعمل De-encapsulation — بيشيل الـ Headers واحدة واحدة من الأسفل للأعلى</span>
+          <span>🔄</span><span>The other side does De-encapsulation — removes Headers one by one from bottom to top</span>
         </div>
       </div>
     `,
-    note: 'أهم slide في القسم ده. لو فهمت الـ Encapsulation دي — فهمت 70% من الـ Networking.'
+    note: 'The most important slide in this section. If you understand Encapsulation — you understand 70% of Networking.'
   },
 
   // ── SLIDE 16: OSI vs TCP/IP ──
@@ -684,22 +680,22 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 03 · TCP/IP', color: 'badge-purple' },
     title: 'OSI vs <span class="hl">TCP/IP</span>',
-    subtitle: 'النظرية vs التطبيق الفعلي',
+    subtitle: 'Theory vs Practical Application',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent3);">📚 OSI Model (7 Layers)</div>
           ${mkBullets([
-            ['📖','purple','نموذج نظري / مرجعي — للتعليم والـ Troubleshooting',''],
-            ['🏛️','purple','وضعته ISO سنة 1983',''],
-            ['🔧','purple','بيُستخدم كـ Framework لفهم الـ Networking',''],
+            ['📖','purple','Theoretical/Reference model — for education and Troubleshooting',''],
+            ['🏛️','purple','Developed by ISO in 1983',''],
+            ['🔧','purple','Used as a Framework to understand Networking',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">⚡ TCP/IP (4 Layers)</div>
           ${mkBullets([
-            ['🌐','green','النموذج العملي المستخدم في الـ Internet',''],
-            ['💻','green','Cross-Platform — بيشتغل على كل الأنظمة',''],
+            ['🌐','green','The practical model used on the Internet',''],
+            ['💻','green','Cross-Platform — works on all systems',''],
             ['🔗','green','Layers: Application, Transport, Internet, Network Access',''],
           ])}
         </div>
@@ -725,7 +721,7 @@ const slides = [
         </div>
       </div>
     `,
-    note: 'OSI للفهم والتعليم. TCP/IP للتطبيق الفعلي. في الواقع — كل حاجة على TCP/IP.'
+    note: 'OSI is for learning and understanding. TCP/IP is for practical application. In reality — everything runs on TCP/IP.'
   },
 
   // ── SLIDE 17: SECTION DIVIDER IP ──
@@ -733,7 +729,7 @@ const slides = [
     type: 'divider',
     num: '04',
     title: 'IP Addressing & Transport',
-    subtitle: 'عنوانك على الـ Network — وكيف البيانات بتتنقل',
+    subtitle: 'Your address on the Network — and how data is transferred',
     color: 'var(--c-green)'
   },
 
@@ -742,7 +738,7 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 04 · IP Addressing', color: 'badge-green' },
     title: '<span class="hl">IPv4</span> — Your Logical Address',
-    subtitle: 'العنوان المنطقي على الـ Network',
+    subtitle: 'The logical address on the Network',
     content: `
       <div class="diagram-box" style="margin-bottom:14px;">
         <div style="display:flex;gap:0;justify-content:center;align-items:center;flex-wrap:wrap;">
@@ -757,14 +753,14 @@ const slides = [
       </div>
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🔢','blue','<span class="en">32-bit</span> — مقسمة لـ 4 Octets | كل Octet من 0 لـ 255',''],
+          ['🔢','blue','<span class="en">32-bit</span> — Divided into 4 Octets | Each Octet from 0 to 255',''],
           ['📊','green','<span class="en">Classes:</span> A (1–126), B (128–191), C (192–223)',''],
-          ['🧮','purple','عدد العناوين الممكنة: <span class="en">2³² = ~4.3 Billion</span>',''],
-          ['⚠️','orange','العناوين خلصت! ← سبب ظهور <span class="en">IPv6</span> و<span class="en">NAT</span>',''],
+          ['🧮','purple','Number of possible addresses: <span class="en">2³² = ~4.3 Billion</span>',''],
+          ['⚠️','orange','Addresses ran out! ← The reason for the emergence of <span class="en">IPv6</span> and <span class="en">NAT</span>',''],
         ])}
       </div>
     `,
-    note: 'IPv6 بيوفر 340 undecillion عنوان — يعني مش هتخلص في حياتنا.'
+    note: 'IPv6 provides 340 undecillion addresses — so they won\'t run out in our lifetime.'
   },
 
   // ── SLIDE 19: PRIVATE vs PUBLIC + NAT ──
@@ -772,33 +768,33 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 04 · IP Addressing', color: 'badge-green' },
     title: '<span class="hl">Private</span> vs <span class="hl">Public</span> IP + NAT',
-    subtitle: 'إيه الفرق؟ وإزاي بيشتغل الـ Router؟',
+    subtitle: 'What\'s the difference? And how does the Router work?',
     content: `
       <div class="two-col" style="margin-bottom:14px;">
         <div class="col-card">
-          <div class="col-card-title" style="color:var(--c-accent3);">🏠 Private IP (داخلي)</div>
+          <div class="col-card-title" style="color:var(--c-accent3);">🏠 Private IP (Internal)</div>
           ${mkBullets([
             ['🔒','purple','Class A: <span class="en">10.0.0.0 → 10.255.255.255</span>',''],
             ['🔒','purple','Class B: <span class="en">172.16.0.0 → 172.31.255.255</span>',''],
             ['🔒','purple','Class C: <span class="en">192.168.0.0 → 192.168.255.255</span>',''],
-            ['🚫','orange','مش بيتشاف من الـ Internet',''],
+            ['🚫','orange','Not visible from the Internet',''],
           ])}
         </div>
         <div class="col-card">
-          <div class="col-card-title" style="color:var(--c-green);">🌍 Public IP (حقيقي)</div>
+          <div class="col-card-title" style="color:var(--c-green);">🌍 Public IP (Real)</div>
           ${mkBullets([
-            ['🌐','green','بياخده من الـ ISP',''],
-            ['👁️','green','بيتشاف من أي حد على الـ Internet',''],
-            ['🔍','green','تقدر تشوفه: <span class="en">whatismyip.com</span>',''],
+            ['🌐','green','Assigned by the ISP',''],
+            ['👁️','green','Visible to anyone on the Internet',''],
+            ['🔍','green','You can check it: <span class="en">whatismyip.com</span>',''],
           ])}
         </div>
       </div>
       <div class="callout callout-blue">
         <span>🔄</span>
-        <span><strong>NAT (Network Address Translation):</strong> الـ Router بيترجم Private IP → Public IP تلقائياً. أنت وكل أجهزة بيتك بتشتركوا في Public IP واحد!</span>
+        <span><strong>NAT (Network Address Translation):</strong> The Router translates Private IP → Public IP automatically. You and all devices in your home share a single Public IP!</span>
       </div>
     `,
-    note: 'اشرح إن الـ Home Router بيعمل NAT أوتوماتيك — وده سبب إن الكل عنده نفس Public IP.'
+    note: 'Explain that the Home Router does NAT automatically — which is why everyone has the same Public IP.'
   },
 
   // ── SLIDE 20: DHCP + SPECIAL ──
@@ -806,22 +802,22 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 04 · IP Addressing', color: 'badge-green' },
     title: 'How Devices Get Their <span class="hl">IP?</span>',
-    subtitle: 'Manual, DHCP, APIPA — إيه الفرق؟',
+    subtitle: 'Manual, DHCP, APIPA — What is the difference?',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🖊️','blue','<span class="en">Manual (Static):</span> بتحط IP, Subnet Mask, Gateway, DNS يدوياً — للـ Servers',''],
-          ['🤖','green','<span class="en">DHCP (Automatic):</span> Server بيوزع الـ Config أوتوماتيك | DORA: Discover→Offer→Request→Acknowledge',''],
-          ['🆘','orange','<span class="en">APIPA:</span> لو مافيش DHCP — الجهاز يحط لنفسه <span class="en">169.254.x.x</span> — للـ LAN بس، مش بيتراوت',''],
-          ['🔁','purple','<span class="en">Loopback = 127.0.0.1</span> — لاختبار الـ NIC نفسه — "هل الكارت شغال؟"',''],
+          ['🖊️','blue','<span class="en">Manual (Static):</span> You set IP, Subnet Mask, Gateway, DNS manually — for Servers',''],
+          ['🤖','green','<span class="en">DHCP (Automatic):</span> Server distributes Config automatically | DORA: Discover→Offer→Request→Acknowledge',''],
+          ['🆘','orange','<span class="en">APIPA:</span> If no DHCP — the device assigns itself <span class="en">169.254.x.x</span> — for LAN only, not routable',''],
+          ['🔁','purple','<span class="en">Loopback = 127.0.0.1</span> — To test the NIC itself — "Is the card working?"',''],
         ])}
       </div>
       <div class="callout callout-red" style="margin-top:14px;">
         <span>⚠️</span>
-        <span><strong>Troubleshooting Clue:</strong> لما تشوف <strong>169.254.x.x</strong> على جهاز — اعرف إن الـ DHCP فشل!</span>
+        <span><strong>Troubleshooting Clue:</strong> When you see <strong>169.254.x.x</strong> on a device — know that DHCP failed!</span>
       </div>
     `,
-    note: 'DORA هو أهم حاجة هنا — Discover, Offer, Request, Acknowledge. ارسمه على السبورة.'
+    note: 'DORA is the most important concept here — Discover, Offer, Request, Acknowledge. Draw it on the board.'
   },
 
   // ── SLIDE 21: ARP ──
@@ -829,14 +825,14 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 04 · ARP', color: 'badge-green' },
     title: 'ARP — <span class="hl">Who Has This IP?</span>',
-    subtitle: 'الجسر بين الـ IP والـ MAC',
+    subtitle: 'The bridge between IP and MAC',
     content: `
       <div class="diagram-box" style="margin-bottom:14px;">
         <div class="flow-row" style="gap:8px;flex-wrap:wrap;justify-content:center;">
           <div class="flow-node node-blue">Device A<br><span style="font-size:10px;">IP: 192.168.1.5</span></div>
           <div style="text-align:center;">
             <div class="flow-arrow">→ Broadcast →</div>
-            <div style="font-size:11px;color:var(--c-dim);">"من عنده IP 192.168.1.1؟"</div>
+            <div style="font-size:11px;color:var(--c-dim);">"Who has IP 192.168.1.1?"</div>
           </div>
           <div class="flow-node node-green">Device B<br><span style="font-size:10px;">IP: 192.168.1.1</span></div>
         </div>
@@ -844,18 +840,18 @@ const slides = [
           <div class="flow-node node-blue">Device A</div>
           <div style="text-align:center;">
             <div class="flow-arrow">← Reply ←</div>
-            <div style="font-size:11px;color:var(--c-dim);">"أنا! MAC: AA:BB:CC:DD:EE:FF"</div>
+            <div style="font-size:11px;color:var(--c-dim);">"Me! MAC: AA:BB:CC:DD:EE:FF"</div>
           </div>
           <div class="flow-node node-green">Device B</div>
         </div>
-        <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--c-dim);">النتيجة تُخزّن في <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">ARP Table</span> → اعرضها بـ <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">arp -a</span></div>
+        <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--c-dim);">Result is cached in <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">ARP Table</span> → Show it with <span style="color:var(--c-accent);font-family:'JetBrains Mono',monospace;">arp -a</span></div>
       </div>
       <div class="callout callout-red">
         <span>🔴</span>
-        <span><strong>ARP Spoofing Attack:</strong> المهاجم بيرد بدل الـ Router — ويعمل Man-in-the-Middle! كل الـ Traffic بيعدي عليه.</span>
+        <span><strong>ARP Spoofing Attack:</strong> The attacker replies instead of the Router — creating a Man-in-the-Middle! All Traffic passes through them.</span>
       </div>
     `,
-    note: 'ARP Spoofing أساس هجمات كتير — Wireshark بيقدر يكشفه.'
+    note: 'ARP Spoofing is the foundation of many attacks — Wireshark can detect it easily.'
   },
 
   // ── SLIDE 22: SECTION DIVIDER TRANSPORT ──
@@ -872,7 +868,7 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 05 · Transport Layer', color: 'badge-blue' },
     title: '<span class="hl">TCP</span> vs <span class="hl">UDP</span>',
-    subtitle: 'Reliable vs Fast — امتى تستخدم أي منهم؟',
+    subtitle: 'Reliable vs Fast — When to use which?',
     content: `
       <table class="comp-table">
         <thead>
@@ -885,8 +881,8 @@ const slides = [
         <tbody>
           ${[
             ['Connection','Connection-Oriented (Handshake)','Connectionless'],
-            ['Reliability','مضمون — Acknowledgement','مش مضمون — Best-Effort'],
-            ['Speed','أبطأ نسبياً','أسرع بكتير'],
+            ['Reliability','Guaranteed — Acknowledgement','Not guaranteed — Best-Effort'],
+            ['Speed','Relatively slower','Much faster'],
             ['Error Control','Full Error Checking','Minimal'],
             ['Flow Control','TCP Windowing','None'],
             ['Use Cases','HTTP, HTTPS, Email, FTP','DNS, Streaming, VoIP, Gaming'],
@@ -902,10 +898,10 @@ const slides = [
       </table>
       <div class="callout callout-blue" style="margin-top:14px;font-size:13px;">
         <span>📮</span>
-        <span><strong>Analogy:</strong> TCP = Registered Mail (تأكيد الوصول) &nbsp;|&nbsp; UDP = Flyer في الشارع (بتوزع ومش محتاج تأكيد)</span>
+        <span><strong>Analogy:</strong> TCP = Registered Mail (delivery confirmed) &nbsp;|&nbsp; UDP = Street Flyer (distributed, no confirmation needed)</span>
       </div>
     `,
-    note: 'اسأل: لما بتعمل Video Call — TCP ولا UDP؟ ليه؟'
+    note: 'Ask: When you make a Video Call — is it TCP or UDP? Why?'
   },
 
   // ── SLIDE 24: TCP 3-WAY HANDSHAKE ──
@@ -913,7 +909,7 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 05 · TCP', color: 'badge-blue' },
     title: 'TCP <span class="hl">3-Way Handshake</span>',
-    subtitle: 'إزاي اتصالات الـ TCP بتتأسس؟',
+    subtitle: 'How are TCP connections established?',
     content: `
       <div class="diagram-box">
         <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:start;">
@@ -926,9 +922,9 @@ const slides = [
           </div>
         </div>
         ${[
-          ['→','SYN','node-blue','عايز أتكلم معاك','1'],
-          ['←','SYN-ACK','node-green','تمام، أنا جاهز ومنتظر','2'],
-          ['→','ACK','node-blue','ممتاز، نبدأ!','3'],
+          ['→','SYN','node-blue','I want to talk to you','1'],
+          ['←','SYN-ACK','node-green','Alright, I\'m ready and waiting','2'],
+          ['→','ACK','node-blue','Great, let\'s start!','3'],
         ].map(([dir,flag,cls,desc,step])=>`
           <div style="display:flex;align-items:center;gap:12px;margin:10px 0;${dir==='←'?'flex-direction:row-reverse;':''}" >
             <div class="flow-node ${cls}" style="min-width:80px;text-align:center;font-size:12px;">${step}. ${flag}</div>
@@ -941,28 +937,28 @@ const slides = [
       </div>
       <div class="callout callout-red" style="margin-top:14px;">
         <span>🔴</span>
-        <span><strong>SYN Flood Attack (DoS):</strong> المهاجم بيبعت SYN كتير من غير ما يكمل الـ Handshake → الـ Server يحجز Resources → يقع</span>
+        <span><strong>SYN Flood Attack (DoS):</strong> The attacker sends many SYNs without completing the Handshake → Server allocates Resources → Server crashes</span>
       </div>
     `,
-    note: 'ده أساس فهم الـ SYN Flood — واحد من أشهر هجمات الـ DoS.'
+    note: 'This is the foundation for understanding SYN Floods — one of the most famous DoS attacks.'
   },
 
   // ── SLIDE 25: PORT NUMBERS ──
   {
     type: 'standard',
     badge: { text: 'Section 05 · Ports', color: 'badge-blue' },
-    title: '<span class="hl">Port Numbers</span> — باب الخدمة',
-    subtitle: 'IP + Port = Socket = العنوان الكامل للاتصال',
+    title: '<span class="hl">Port Numbers</span> — Service Door',
+    subtitle: 'IP + Port = Socket = The full connection address',
     content: `
       <div class="two-col">
         <div>
           <div class="bullets">
             ${mkBullets([
-              ['🚪','blue','<span class="en">Port</span> = رقم بيحدد الـ Service على الجهاز',''],
-              ['🔢','purple','<span class="en">Well-Known (0–1023):</span> محجوزة لـ ICANN',''],
-              ['📋','green','<span class="en">Registered (1024–49151):</span> تطبيقات محددة',''],
-              ['🎲','orange','<span class="en">Dynamic (49152–65535):</span> مؤقتة للـ Client',''],
-              ['🔍','blue','<span class="en">netstat -an</span> لمشاهدة كل الـ Ports المفتوحة',''],
+              ['🚪','blue','<span class="en">Port</span> = A number that identifies the Service on the device',''],
+              ['🔢','purple','<span class="en">Well-Known (0–1023):</span> Reserved by ICANN',''],
+              ['📋','green','<span class="en">Registered (1024–49151):</span> Specific applications',''],
+              ['🎲','orange','<span class="en">Dynamic (49152–65535):</span> Temporary for the Client',''],
+              ['🔍','blue','<span class="en">netstat -an</span> to view all open Ports',''],
             ])}
           </div>
         </div>
@@ -989,7 +985,7 @@ const slides = [
         </div>
       </div>
     `,
-    note: 'اسأل: لو شفت Port 3389 مفتوح على جهاز من الـ Internet — إيه أول حاجة تفكر فيها؟'
+    note: 'Ask: If you saw Port 3389 open on a machine from the Internet — what is the first thing you\'d think of?'
   },
 
   // ── SLIDE 26: SECTION DIVIDER APP ──
@@ -997,7 +993,7 @@ const slides = [
     type: 'divider',
     num: '06',
     title: 'Application Layer Protocols',
-    subtitle: 'الـ Protocols اللي بتستخدمها كل يوم',
+    subtitle: 'The Protocols you use every day',
     color: 'var(--c-accent2)'
   },
 
@@ -1006,22 +1002,22 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 06 · App Protocols', color: 'badge-orange' },
     title: '<span class="hl">HTTP</span> & <span class="hl">DNS</span> — The Web\'s Foundation',
-    subtitle: 'لما بتفتح موقع — إيه اللي بيحصل؟',
+    subtitle: 'When you open a website — what happens?',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent);">🌐 HTTP / HTTPS</div>
           ${mkBullets([
-            ['📄','blue','<span class="en">HyperText Transfer Protocol</span> — بيجيب صفحات الويب',''],
-            ['🔓','red','<span class="en">HTTP Port 80</span> — غير مشفر <span class="warn">❌</span>',''],
-            ['🔒','green','<span class="en">HTTPS Port 443</span> — مشفر بـ TLS/SSL <span class="good">✅</span>',''],
+            ['📄','blue','<span class="en">HyperText Transfer Protocol</span> — Fetches web pages',''],
+            ['🔓','red','<span class="en">HTTP Port 80</span> — Unencrypted <span class="warn">❌</span>',''],
+            ['🔒','green','<span class="en">HTTPS Port 443</span> — Encrypted with TLS/SSL <span class="good">✅</span>',''],
             ['🔗','blue','<span class="en">URL:</span> Protocol + Host + Path',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">🗺️ DNS</div>
           ${mkBullets([
-            ['📖','green','بيترجم أسامي المواقع لـ IP Addresses',''],
+            ['📖','green','Translates website names to IP Addresses',''],
             ['🔍','green','Check Order: Cache → Hosts File → DNS Server',''],
             ['📁','purple','<span class="en">Hosts File:</span> <span class="en">C:\\Windows\\System32\\drivers\\etc\\hosts</span>',''],
             ['💻','blue','Command: <span class="en">nslookup google.com</span>',''],
@@ -1030,10 +1026,10 @@ const slides = [
       </div>
       <div class="callout callout-red" style="margin-top:14px;">
         <span>🔴</span>
-        <span><strong>DNS Spoofing:</strong> المهاجم بيخلي الـ DNS يرد بـ IP غلط → توصل لموقع مزيف (Phishing)</span>
+        <span><strong>DNS Spoofing:</strong> The attacker makes DNS reply with a wrong IP → you land on a fake site (Phishing)</span>
       </div>
     `,
-    note: 'Hosts File ممكن يتعدّل من المهاجم — وده نوع من DNS Poisoning محلي.'
+    note: 'The Hosts File can be modified by an attacker — which is a type of local DNS Poisoning.'
   },
 
   // ── SLIDE 28: FTP & EMAIL ──
@@ -1041,32 +1037,32 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 06 · App Protocols', color: 'badge-orange' },
     title: '<span class="hl">FTP</span> & Email Protocols',
-    subtitle: 'نقل الملفات والإيميل',
+    subtitle: 'File Transfer and Email',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent2);">📁 FTP</div>
           ${mkBullets([
-            ['📤','orange','<span class="en">File Transfer Protocol</span> — نقل ملفات بين أجهزة',''],
+            ['📤','orange','<span class="en">File Transfer Protocol</span> — Transferring files between devices',''],
             ['🔌','orange','<span class="en">Port 21:</span> Command/Control | <span class="en">Port 20:</span> Data',''],
-            ['🔓','red','غير مشفر <span class="warn">❌</span> — استخدم <span class="en">SFTP</span> أو <span class="en">FTPS</span> بدلاً منه',''],
+            ['🔓','red','Unencrypted <span class="warn">❌</span> — Use <span class="en">SFTP</span> or <span class="en">FTPS</span> instead',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-purple);">📧 Email Protocols</div>
           ${mkBullets([
-            ['📤','purple','<span class="en">SMTP (Port 25):</span> لإرسال الإيميل',''],
-            ['📥','green','<span class="en">POP3 (Port 110):</span> بتحمّل الإيميل للجهاز — Offline',''],
-            ['☁️','blue','<span class="en">IMAP (Port 143):</span> بتوصل من أي مكان — Online',''],
+            ['📤','purple','<span class="en">SMTP (Port 25):</span> For sending email',''],
+            ['📥','green','<span class="en">POP3 (Port 110):</span> Downloads email to device — Offline',''],
+            ['☁️','blue','<span class="en">IMAP (Port 143):</span> Access from anywhere — Online',''],
           ])}
         </div>
       </div>
       <div class="callout callout-blue" style="margin-top:14px;font-size:13px;">
         <span>📮</span>
-        <span><strong>Analogy:</strong> SMTP = ساعي البريد | POP3 = بتاخد الجوابات للبيت | IMAP = بتقرأ في مكتب البريد</span>
+        <span><strong>Analogy:</strong> SMTP = Mailman | POP3 = Taking letters home | IMAP = Reading at the post office</span>
       </div>
     `,
-    note: 'POP3 بيحذف الإيميل من السيرفر بعد التحميل — IMAP بيخليه. اسأل: أي واحد أحسن ليك؟'
+    note: 'POP3 deletes the email from the server after downloading — IMAP keeps it. Ask: Which one is better for you?'
   },
 
   // ── SLIDE 29: SSH, TELNET, RDP ──
@@ -1074,48 +1070,48 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 06 · Remote Access', color: 'badge-orange' },
     title: 'Remote Access — <span class="hl">SSH</span>, <span class="hl">Telnet</span>, <span class="hl">RDP</span>',
-    subtitle: 'إزاي بتوصل للأجهزة من بعيد؟',
+    subtitle: 'How do you access devices remotely?',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['📟','red','<span class="en">Telnet (Port 23):</span> Remote Access قديم — كل حاجة <span class="warn">Plain Text</span> — مش مشفر أبداً ❌',''],
-          ['🔐','green','<span class="en">SSH (Port 22):</span> نفس فكرة Telnet بس مشفر ✅ — Standard للـ Linux/Server Management',''],
-          ['🖥️','blue','<span class="en">RDP (Port 3389):</span> Remote Desktop — بتشوف الـ Desktop من بعيد — Microsoft Proprietary',''],
-          ['⚠️','red','<span class="en">RDP</span> بيتهاجم كتير: <span class="en">Brute Force</span> على Port 3389 — لازم يكون محمي',''],
+          ['📟','red','<span class="en">Telnet (Port 23):</span> Old Remote Access — everything is <span class="warn">Plain Text</span> — Never encrypted ❌',''],
+          ['🔐','green','<span class="en">SSH (Port 22):</span> Same idea as Telnet but encrypted ✅ — Standard for Linux/Server Management',''],
+          ['🖥️','blue','<span class="en">RDP (Port 3389):</span> Remote Desktop — You see the Desktop remotely — Microsoft Proprietary',''],
+          ['⚠️','red','<span class="en">RDP</span> Is heavily attacked: <span class="en">Brute Force</span> on Port 3389 — must be protected',''],
         ])}
       </div>
       <div class="code-block" style="margin-top:14px;">
-<span class="cmd">netstat -an</span>  <span class="comment">→ اعرض كل الـ Active Connections والـ Ports</span>
-<span class="comment">لو شفت 0.0.0.0:3389 LISTENING → RDP مفتوح من الخارج ⚠️</span>
+<span class="cmd">netstat -an</span>  <span class="comment">→ View all Active Connections and Ports</span>
+<span class="comment">If you see 0.0.0.0:3389 LISTENING → RDP is open to the outside ⚠️</span>
       </div>
     `,
-    note: 'Telnet يبعت كلمة السر بدون تشفير — Wireshark بيشوفها بسهولة. Demo بسيط لو عندك.'
+    note: 'Telnet sends the password without encryption — Wireshark can see it easily. Show a simple Demo if you have one.'
   },
 
   // ── SLIDE 30: LAB COMMANDS ──
   {
     type: 'standard',
     badge: { text: 'Section 06 · Lab Commands', color: 'badge-green' },
-    title: '🖥️ <span class="hl">Essential Commands</span> — جربها دلوقتي!',
-    subtitle: 'الأدوات اللي هتستخدمها كل يوم',
+    title: '🖥️ <span class="hl">Essential Commands</span> — Try it now!',
+    subtitle: 'The tools you will use every day',
     content: `
       <div class="code-block">
-<span class="cmd">ipconfig /all</span>         <span class="comment">→ IP, MAC, Gateway, DNS — كل التفاصيل</span>
-<span class="cmd">ping 8.8.8.8</span>           <span class="comment">→ تأكّد من الـ Connectivity مع Google DNS</span>
-<span class="cmd">ping google.com</span>        <span class="comment">→ تأكّد إن الـ DNS شغال</span>
-<span class="cmd">arp -a</span>                 <span class="comment">→ شوف الـ ARP Table — IP → MAC mappings</span>
-<span class="cmd">netstat -an</span>            <span class="comment">→ كل الـ Active Connections والـ Ports</span>
-<span class="cmd">nslookup google.com</span>    <span class="comment">→ اسأل الـ DNS عن الـ IP</span>
-<span class="cmd">tracert google.com</span>     <span class="comment">→ اتتبع المسار للـ Destination hop by hop</span>
-<span class="cmd">ipconfig /release</span>      <span class="comment">→ اتخلص من الـ IP الحالي</span>
-<span class="cmd">ipconfig /renew</span>        <span class="comment">→ اطلب IP جديد من الـ DHCP</span>
+<span class="cmd">ipconfig /all</span>         <span class="comment">→ IP, MAC, Gateway, DNS — all details</span>
+<span class="cmd">ping 8.8.8.8</span>           <span class="comment">→ Verify Connectivity with Google DNS</span>
+<span class="cmd">ping google.com</span>        <span class="comment">→ Verify DNS is working</span>
+<span class="cmd">arp -a</span>                 <span class="comment">→ View the ARP Table — IP → MAC mappings</span>
+<span class="cmd">netstat -an</span>            <span class="comment">→ All Active Connections and Ports</span>
+<span class="cmd">nslookup google.com</span>    <span class="comment">→ Ask DNS for the IP</span>
+<span class="cmd">tracert google.com</span>     <span class="comment">→ Trace the path to the Destination hop by hop</span>
+<span class="cmd">ipconfig /release</span>      <span class="comment">→ Release current IP</span>
+<span class="cmd">ipconfig /renew</span>        <span class="comment">→ Request a new IP from DHCP</span>
       </div>
       <div class="callout callout-green" style="margin-top:14px;">
         <span>🎯</span>
-        <span><strong>Challenge:</strong> افتح CMD دلوقتي وشوف: إيه الـ Default Gateway بتاعك؟ وإيه الـ DNS Server؟</span>
+        <span><strong>Challenge:</strong> Open CMD right now and check: What is your Default Gateway? And your DNS Server?</span>
       </div>
     `,
-    note: 'خلّي الناس يفتحوا CMD وجربوا الـ Commands مع بعض — تفاعل حقيقي.'
+    note: 'Have people open CMD and try the Commands together — real interaction.'
   },
 
   // ── SLIDE 31: SECTION DIVIDER DEVICES ──
@@ -1123,7 +1119,7 @@ const slides = [
     type: 'divider',
     num: '07',
     title: 'Network Devices & Media',
-    subtitle: 'الأجهزة والكابلات — العالم الفيزيائي للـ Network',
+    subtitle: 'Devices and Cables — The physical world of the Network',
     color: 'var(--c-accent)'
   },
 
@@ -1132,13 +1128,13 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 07 · Devices', color: 'badge-blue' },
     title: '<span class="hl">Hub</span> vs <span class="hl">Switch</span> vs <span class="hl">Router</span>',
-    subtitle: 'الفرق بينهم والـ OSI Layer الخاص بكل واحد',
+    subtitle: 'Differences between them and their OSI Layers',
     content: `
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
         ${[
-          ['📡','Hub','Layer 1 — Physical','node-red','red','كل الأجهزة في نفس Collision Domain. بيـ Broadcast لكل حد. ❌ بطيء وغير آمن.','Shared Bandwidth'],
-          ['🔀','Switch','Layer 2 — Data Link','node-blue','blue','بيبعت للمستقبل بس عن طريق MAC Table. كل Port = Collision Domain منفصل. ✅','MAC Address Table'],
-          ['🌐','Router','Layer 3 — Network','node-green','green','بيوصل شبكات مختلفة. بيشتغل على IP. عنده Routing Table. ✅ Best Path.','IP Routing Table'],
+          ['📡','Hub','Layer 1 — Physical','node-red','red','All devices in the same Collision Domain. Broadcasts to everyone. ❌ Slow and insecure.','Shared Bandwidth'],
+          ['🔀','Switch','Layer 2 — Data Link','node-blue','blue','Sends only to the receiver via MAC Table. Each Port = separate Collision Domain. ✅','MAC Address Table'],
+          ['🌐','Router','Layer 3 — Network','node-green','green','Connects different networks. Works on IP. Has a Routing Table. ✅ Best Path.','IP Routing Table'],
         ].map(([icon,name,layer,cls,color,desc,table])=>`
           <div class="col-card" style="border-color:var(--c-${color=='red'?'red':color=='blue'?'accent':'green'})22;">
             <div style="font-size:32px;margin-bottom:8px;">${icon}</div>
@@ -1150,7 +1146,7 @@ const slides = [
         `).join('')}
       </div>
     `,
-    note: 'الـ Home Router بتاعك في البيت = Router + Switch + DHCP + Firewall + Access Point كلهم في جهاز واحد!'
+    note: 'Your Home Router is actually = Router + Switch + DHCP + Firewall + Access Point all in one device!'
   },
 
   // ── SLIDE 33: TRANSMISSION MEDIA ──
@@ -1158,34 +1154,34 @@ const slides = [
     type: 'standard',
     badge: { text: 'Section 07 · Media', color: 'badge-blue' },
     title: 'Transmission <span class="hl">Media</span>',
-    subtitle: 'بتوصل الأجهزة بإيه؟ — Wired & Wireless',
+    subtitle: 'What connects the devices? — Wired & Wireless',
     content: `
       <div class="two-col">
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-accent);">🔌 Wired Media</div>
           ${mkBullets([
-            ['📶','blue','<span class="en">UTP:</span> الأشيع — Cat5e (1Gbps), Cat6 (10Gbps) — RJ-45',''],
-            ['🛡️','blue','<span class="en">STP:</span> محمي من الـ Interference — أغلى وأصعب تركيب',''],
-            ['📺','orange','<span class="en">Coaxial:</span> قديم — التليفزيون الكابلي',''],
-            ['💡','green','<span class="en">Fiber Optic:</span> الأسرع + أطول مسافة + أصعب Eavesdropping',''],
+            ['📶','blue','<span class="en">UTP:</span> Most common — Cat5e (1Gbps), Cat6 (10Gbps) — RJ-45',''],
+            ['🛡️','blue','<span class="en">STP:</span> Protected from Interference — more expensive and harder to install',''],
+            ['📺','orange','<span class="en">Coaxial:</span> Old — Cable TV',''],
+            ['💡','green','<span class="en">Fiber Optic:</span> Fastest + longest distance + hardest to Eavesdrop',''],
           ])}
         </div>
         <div class="col-card">
           <div class="col-card-title" style="color:var(--c-green);">📡 Wireless Media</div>
           ${mkBullets([
-            ['📶','green','<span class="en">WiFi (802.11):</span> 2.4GHz (أبعد) vs 5GHz (أسرع)',''],
-            ['🔵','blue','<span class="en">Bluetooth:</span> مسافة قصيرة — PAN',''],
-            ['📛','orange','<span class="en">SSID:</span> اسم الشبكة — ممكن يتخفى (Hidden SSID)',''],
-            ['⚠️','red','Wireless سهل يتعمله Sniffing لو مش مشفر ❌',''],
+            ['📶','green','<span class="en">WiFi (802.11):</span> 2.4GHz (further) vs 5GHz (faster)',''],
+            ['🔵','blue','<span class="en">Bluetooth:</span> Short distance — PAN',''],
+            ['📛','orange','<span class="en">SSID:</span> Network name — can be hidden (Hidden SSID)',''],
+            ['⚠️','red','Wireless is easily sniffed if unencrypted ❌',''],
           ])}
         </div>
       </div>
       <div class="callout callout-green" style="margin-top:14px;font-size:13px;">
         <span>💡</span>
-        <span><strong>Security Tip:</strong> Fiber أصعب Eavesdropping — عشان بيبعت light مش إشارة كهربية زي الـ UTP</span>
+        <span><strong>Security Tip:</strong> Fiber is harder to eavesdrop — because it sends light, not an electrical signal like UTP</span>
       </div>
     `,
-    note: 'Hidden SSID مش Security بالمرة — أي Wireless Sniffer يشوفها في ثواني.'
+    note: 'Hidden SSID is not Security at all — any Wireless Sniffer can see it in seconds.'
   },
 
   // ── SLIDE 34: SECTION DIVIDER SECURITY ──
@@ -1193,7 +1189,7 @@ const slides = [
     type: 'divider',
     num: '08',
     title: 'Security Perspective',
-    subtitle: 'نفس المفاهيم — بعين المهاجم والمدافع',
+    subtitle: 'The same concepts — through the eyes of attacker and defender',
     color: 'var(--c-red)'
   },
 
@@ -1201,61 +1197,61 @@ const slides = [
   {
     type: 'standard',
     badge: { text: 'Section 08 · Security', color: 'badge-red' },
-    title: '🔒 Network Attacks — <span class="hl">ما تعلّمناه بعين المهاجم</span>',
-    subtitle: 'كل مفهوم اتعلمناه — في ثغرة محتملة',
+    title: '🔒 Network Attacks — <span class="hl">What we learned, through the attacker\'s eyes</span>',
+    subtitle: 'Every concept we learned — has a potential vulnerability',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🎭','red','<span class="en">ARP Spoofing</span> — تزوير الـ ARP Table ← <span class="en">Man-in-the-Middle (MITM)</span>',''],
-          ['🗺️','red','<span class="en">DNS Spoofing/Poisoning</span> — تزوير الـ DNS ← Phishing وتحويل المستخدم لموقع مزيف',''],
-          ['💥','red','<span class="en">SYN Flood</span> — إغراق الـ Server بـ TCP SYN ← <span class="en">Denial of Service (DoS)</span>',''],
-          ['👁️','red','<span class="en">Network Sniffing</span> — التقاط الـ Traffic على Hub أو WiFi مفتوح ← سرقة Passwords',''],
-          ['🔑','red','<span class="en">RDP Brute Force</span> — هجوم على Port 3389 ← دخول غير مصرح',''],
-          ['📡','red','<span class="en">Wireless Eavesdropping</span> — التقاط الـ WiFi Traffic لو مش مشفر',''],
+          ['🎭','red','<span class="en">ARP Spoofing</span> — Forging the ARP Table ← <span class="en">Man-in-the-Middle (MITM)</span>',''],
+          ['🗺️','red','<span class="en">DNS Spoofing/Poisoning</span> — Forging DNS ← Phishing and redirecting user to a fake site',''],
+          ['💥','red','<span class="en">SYN Flood</span> — Flooding the Server with TCP SYN ← <span class="en">Denial of Service (DoS)</span>',''],
+          ['👁️','red','<span class="en">Network Sniffing</span> — Capturing Traffic on a Hub or open WiFi ← Stealing Passwords',''],
+          ['🔑','red','<span class="en">RDP Brute Force</span> — Attack on Port 3389 ← Unauthorized access',''],
+          ['📡','red','<span class="en">Wireless Eavesdropping</span> — Capturing WiFi Traffic if unencrypted',''],
         ])}
       </div>
     `,
-    note: 'ده مش قائمة للهجوم — ده لفهم إيه اللي لازم تحميه. كل هجوم ليه دفاع.'
+    note: 'This is not an attack list — it is to understand what you must protect. Every attack has a defense.'
   },
 
   // ── SLIDE 36: DEFENSES ──
   {
     type: 'standard',
     badge: { text: 'Section 08 · Defense', color: 'badge-green' },
-    title: '🛡️ <span class="hl">Defense Strategies</span> — كيف تحمي نفسك؟',
+    title: '🛡️ <span class="hl">Defense Strategies</span> — How to protect yourself?',
     subtitle: 'Blue Team Mindset',
     content: `
       <div class="bullets" id="bullets">
         ${mkBullets([
-          ['🔒','green','استخدم <span class="en">HTTPS</span> دايماً — مش HTTP | تشفير الـ Traffic',''],
-          ['🔑','green','استخدم <span class="en">SSH</span> بدل <span class="en">Telnet</span> | <span class="en">SFTP</span> بدل <span class="en">FTP</span>',''],
-          ['🔀','green','استخدم <span class="en">Switches</span> بدل <span class="en">Hubs</span> — بيمنع الـ Sniffing',''],
-          ['📋','green','<span class="en">Dynamic ARP Inspection</span> — بيمنع الـ ARP Spoofing على الـ Switch',''],
-          ['🌐','green','<span class="en">DNS over HTTPS (DoH)</span> — بيشفر الـ DNS Queries',''],
-          ['🔐','green','<span class="en">WPA3</span> للـ WiFi | مش WEP أو WPA | لا Open Networks',''],
+          ['🔒','green','Always use <span class="en">HTTPS</span> — not HTTP | Encrypt Traffic',''],
+          ['🔑','green','Use <span class="en">SSH</span> instead of <span class="en">Telnet</span> | <span class="en">SFTP</span> instead of <span class="en">FTP</span>',''],
+          ['🔀','green','Use <span class="en">Switches</span> instead of <span class="en">Hubs</span> — prevents Sniffing',''],
+          ['📋','green','<span class="en">Dynamic ARP Inspection</span> — Prevents ARP Spoofing on the Switch',''],
+          ['🌐','green','<span class="en">DNS over HTTPS (DoH)</span> — Encrypts DNS Queries',''],
+          ['🔐','green','<span class="en">WPA3</span> for WiFi | not WEP or WPA | No Open Networks',''],
         ])}
       </div>
       <div class="callout callout-green" style="margin-top:14px;">
         <span>🎯</span>
-        <span><strong>الـ Security مش Product — ده Mindset:</strong> كل حاجة بتشتغل عليها سألها: "إزاي ممكن اتهاجم هنا؟"</span>
+        <span><strong>Security is not a Product — it\'s a Mindset:</strong> Ask yourself about everything you work on: "How could this be attacked?"</span>
       </div>
     `,
-    note: 'الـ Blue Team بيحتاج يفهم الـ Red Team — عشان يعرف إيه اللي يحميه.'
+    note: 'The Blue Team needs to understand the Red Team — to know what to protect.'
   },
 
   // ── SLIDE 37: ROADMAP ──
   {
     type: 'standard',
     badge: { text: 'Next Steps · Career Path', color: 'badge-purple' },
-    title: 'الخطوات الجاية — <span class="hl">Network Security Roadmap</span>',
-    subtitle: 'من الأساسيات للاحتراف',
+    title: 'Next Steps — <span class="hl">Network Security Roadmap</span>',
+    subtitle: 'From fundamentals to mastery',
     content: `
       <div class="roadmap">
         ${[
-          ['Foundation','Entry Level','CompTIA Security+ | Cisco CCNA','ابني الـ Foundation أول'],
+          ['Foundation','Entry Level','CompTIA Security+ | Cisco CCNA','Build the Foundation first'],
           ['Intermediate','Mid Level','CEH | CySA+ | Fortinet NSE | PCNSE','Offensive + Defensive Skills'],
           ['Advanced','Expert Level','OSCP | CISSP | CCNP Security','Architecture + Leadership'],
-          ['Tools','Practice Daily','Wireshark | Packet Tracer | Kali Linux | TryHackMe','Hands-on هو الأهم'],
+          ['Tools','Practice Daily','Wireshark | Packet Tracer | Kali Linux | TryHackMe','Hands-on is the most important'],
         ].map(([stage,label,certs,tip],i,arr)=>`
           <div class="roadmap-row">
             <div class="roadmap-line">
@@ -1271,7 +1267,7 @@ const slides = [
         `).join('')}
       </div>
     `,
-    note: 'الـ Roadmap ده مش قانون — ابدأ بالـ Security+ وCCNA وهتفتح أبواب كتير.'
+    note: 'This Roadmap is not a law — start with Security+ and CCNA and it will open many doors.'
   },
 
   // ── SLIDE 38: Q&A ──
@@ -1281,25 +1277,25 @@ const slides = [
       <div class="slide-inner hero-slide">
         <div style="position:relative;z-index:1;text-align:center;">
           <div class="qa-icon">🙋</div>
-          <h1 class="hero-title fade-up delay-1">أسئلة <span class="accent">&amp; نقاش</span></h1>
+          <h1 class="hero-title fade-up delay-1">Questions <span class="accent">&amp; Discussion</span></h1>
           <p class="hero-sub fade-up delay-2">Questions & Discussion</p>
           <div class="hero-badges fade-up delay-3" style="margin-top:24px;">
-            <div class="hero-badge-item">📧 اسأل أي حاجة</div>
-            <div class="hero-badge-item">💬 ناقش أي مفهوم</div>
-            <div class="hero-badge-item">🔁 راجع أي جزء</div>
+            <div class="hero-badge-item">📧 Ask anything</div>
+            <div class="hero-badge-item">💬 Discuss any concept</div>
+            <div class="hero-badge-item">🔁 Review any part</div>
           </div>
-          <div class="callout callout-blue fade-up delay-4" style="margin-top:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:right;">
+          <div class="callout callout-blue fade-up delay-4" style="margin-top:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:left;">
             <span>💡</span>
             <div>
-              <strong>تذكّر:</strong><br>
-              الـ Network هو الـ Foundation لكل حاجة في الـ IT<br>
-              سواء أنت Developer, Security Engineer, أو SysAdmin
+              <strong>Remember:</strong><br>
+              The Network is the Foundation for everything in IT<br>
+              whether you are a Developer, Security Engineer, or SysAdmin
             </div>
           </div>
         </div>
       </div>
     `,
-    note: 'شكراً للجميع — اللي عنده سؤال أو feedback يحتت.'
+    note: 'Thank you everyone — anyone with a question or feedback, feel free to speak.'
   },
 ];
 
@@ -1392,12 +1388,12 @@ function goTo(idx) {
   if (prev) {
     prev.classList.remove('active');
     
-    // التعديل هنا: مسح الـ inline styles عشان السلايد القديم يختفي ويرجع لخصائص الـ CSS الأصلية
+    // Removing inline styles so the old slide disappears smoothly
     prev.style.opacity = '';
     prev.style.transform = '';
     prev.style.transition = '';
 
-    // تحديد اتجاه الخروج
+    // Setting exit animation direction
     if (idx > current) {
       prev.classList.add('exit-left');
       setTimeout(() => prev.classList.remove('exit-left'), 400);
@@ -1430,6 +1426,7 @@ function goTo(idx) {
   current = idx;
   updateUI();
 }
+
 function navigate(dir) {
   const next = current + dir;
   if (next >= 0 && next < slides.length) goTo(next);
