@@ -1391,8 +1391,17 @@ function goTo(idx) {
 
   if (prev) {
     prev.classList.remove('active');
-    prev.classList.add('exit-left');
-    setTimeout(() => prev.classList.remove('exit-left'), 400);
+    
+    // التعديل هنا: مسح الـ inline styles عشان السلايد القديم يختفي ويرجع لخصائص الـ CSS الأصلية
+    prev.style.opacity = '';
+    prev.style.transform = '';
+    prev.style.transition = '';
+
+    // تحديد اتجاه الخروج
+    if (idx > current) {
+      prev.classList.add('exit-left');
+      setTimeout(() => prev.classList.remove('exit-left'), 400);
+    }
   }
 
   if (next) {
@@ -1421,7 +1430,6 @@ function goTo(idx) {
   current = idx;
   updateUI();
 }
-
 function navigate(dir) {
   const next = current + dir;
   if (next >= 0 && next < slides.length) goTo(next);
